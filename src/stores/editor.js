@@ -2,12 +2,22 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useEditorStore = defineStore('editor', () => {
-  const showEditor = ref(false)
-  // const doubleCount = computed(() => count.value * 2)
+  const showEditor = ref(true)
+  const mainColor = ref('')
+  const textColor = ref('')
+  const jumbotronBackgroundColor = ref('')
+  const jumbotronTextColor = ref('')
 
   function toggleShowEditor() {
     showEditor.value = !showEditor.value
   }
 
-  return { showEditor, toggleShowEditor }
+  return {
+    toggleShowEditor,
+    showEditor,
+    mainColor,
+    textColor,
+    jumbotronBackgroundColor,
+    jumbotronTextColor,
+  }
 })
