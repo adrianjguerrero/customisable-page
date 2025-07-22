@@ -1,11 +1,15 @@
-<script setup></script>
+<script setup>
+import { useEditorStore } from '@/stores/editor'
+
+const editor = useEditorStore()
+</script>
 <template>
   <main>
     <header>
       <div class="jumbotron">Welcome to the basic Website</div>
       <nav class="header-menu">
         <ul>
-          <li>Home</li>
+          <li @click="editor.toggleShowEditor()">Customise</li>
           <li>About</li>
           <li>Help</li>
         </ul>
