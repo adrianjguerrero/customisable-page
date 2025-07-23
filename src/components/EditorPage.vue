@@ -5,10 +5,9 @@ function camelCaseToParamCase(camelCaseString) {
   return camelCaseString.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()
 }
 
-const editorStore = useEditorStore()
-
 function setValueonStore(e, stateProperty, elementSelector = ':root') {
-  editorStore.setCustomStyles({ [stateProperty]: e.target.value })
+  const auxObj = { value: e.target.value, selector: elementSelector }
+  editorStore.setCustomStyles({ [stateProperty]: auxObj })
   document
     .querySelector(elementSelector)
     .style.setProperty(`--${camelCaseToParamCase(stateProperty)}`, e.target.value)

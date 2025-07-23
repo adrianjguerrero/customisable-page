@@ -4,10 +4,22 @@ import { defineStore } from 'pinia'
 export const useEditorStore = defineStore('editor', () => {
   const showEditor = ref(true)
   const customStyles = ref({
-    mainColor: '',
-    textColor: '',
-    jumbotronBackgroundColor: '',
-    jumbotronTextColor: '',
+    mainColor: {
+      value: '',
+      selecttor: '',
+    },
+    textColor: {
+      value: '',
+      selecttor: '',
+    },
+    jumbotronBackgroundColor: {
+      value: '',
+      selecttor: '',
+    },
+    jumbotronTextColor: {
+      value: '',
+      selecttor: '',
+    },
   })
 
   function toggleShowEditor() {
