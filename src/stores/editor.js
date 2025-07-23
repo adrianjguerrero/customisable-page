@@ -34,11 +34,25 @@ export const useEditorStore = defineStore('editor', () => {
     window.localStorage.setItem('styles', JSON.stringify(customStyles.value))
   }
 
+  function fetchFromLocalStorage() {
+    customStyles.value = JSON.parse(window.localStorage.getItem('styles')) || defaultStyles()
+  }
+
+  function defaultStyles() {
+    return {
+      mainColor: '#5c5c5c',
+      textColor: '#ffffff',
+      jumbotronBackgroundColor: '',
+      jumbotronTextColor: '',
+    }
+  }
+
   return {
     toggleShowEditor,
     showEditor,
     customStyles,
     setCustomStyles,
     saveStateToLocalStorage,
+    fetchFromLocalStorage,
   }
 })

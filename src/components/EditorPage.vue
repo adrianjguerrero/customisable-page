@@ -1,6 +1,19 @@
 <script setup>
 import { useEditorStore } from '@/stores/editor'
+import { onMounted } from 'vue'
 
+const editorStore = useEditorStore()
+
+onMounted(() => {
+  editorStore.fetchFromLocalStorage()
+
+  for (const key in editorStore.customStyles) {
+    const { value, selector } = editorStore.customStyles[key]
+    document
+      .querySelector(selector || ':root')
+      .style.setProperty(`--${camelCaseToParamCase(key)}`, value)
+  }
+})
 function camelCaseToParamCase(camelCaseString) {
   return camelCaseString.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()
 }
