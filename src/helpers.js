@@ -5,7 +5,6 @@ export function camelCaseToParamCase(camelCaseString) {
 export function applyStylesFromStore(store) {
   for (const key in store.customStyles) {
     const { value, selector } = store.customStyles[key]
-    console.log(value, selector, key)
     document
       .querySelector(selector || ':root')
       .style.setProperty(`--${camelCaseToParamCase(key)}`, value)

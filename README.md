@@ -1,35 +1,29 @@
 # customisable-page
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+-clonar
+-entrar
+-npm i
+-npm run dev
 
 ## Project Setup
 
+Clona el proyecto
+
 ```sh
-npm install
+git clone git@github.com:adrianjguerrero/customisable-page.git
 ```
 
-### Compile and Hot-Reload for Development
+Entra a la carpeta para instalar las dependencias
+
+```sh
+cd customisable-page
+npm i
+```
+
+Corre el servidor de desarollo
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Encontraras el proyecto corriendo en http://localhost:5173/
