@@ -10,7 +10,9 @@ const editorStore = useEditorStore()
 
 <template>
   <MainPage />
-  <EditorPage v-if="editorStore.showEditor" />
+  <Transition name="slide-fade">
+    <EditorPage v-if="editorStore.showEditor" />
+  </Transition>
 </template>
 
-<style scoped></style>
+<style></style>
