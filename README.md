@@ -1,10 +1,5 @@
 # customisable-page
 
--clonar
--entrar
--npm i
--npm run dev
-
 ## Project Setup
 
 Clona el proyecto
