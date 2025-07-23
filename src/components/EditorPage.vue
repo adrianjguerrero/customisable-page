@@ -8,7 +8,7 @@ function camelCaseToParamCase(camelCaseString) {
 const editorStore = useEditorStore()
 
 function setValueonStore(e, stateProperty, elementSelector = ':root') {
-  editorStore.setCustomStyles({ stateProperty: e.target.value })
+  editorStore.setCustomStyles({ [stateProperty]: e.target.value })
   document
     .querySelector(elementSelector)
     .style.setProperty(`--${camelCaseToParamCase(stateProperty)}`, e.target.value)

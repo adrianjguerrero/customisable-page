@@ -10,8 +10,8 @@ const editor = useEditorStore()
       <nav class="header-menu">
         <ul>
           <li @click="editor.toggleShowEditor()">Customise</li>
-          <li>About</li>
-          <li>Help</li>
+          <li @click="editor.saveStateToLocalStorage()">Save Styles</li>
+          <li>Reset Styles</li>
         </ul>
       </nav>
     </header>

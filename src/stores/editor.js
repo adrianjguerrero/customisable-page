@@ -18,10 +18,15 @@ export const useEditorStore = defineStore('editor', () => {
     customStyles.value = { ...customStyles.value, ...newStyles }
   }
 
+  function saveStateToLocalStorage() {
+    window.localStorage.setItem('styles', JSON.stringify(customStyles.value))
+  }
+
   return {
     toggleShowEditor,
     showEditor,
     customStyles,
     setCustomStyles,
+    saveStateToLocalStorage,
   }
 })
