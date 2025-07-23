@@ -5,20 +5,20 @@ export const useEditorStore = defineStore('editor', () => {
   const showEditor = ref(true)
   const customStyles = ref({
     mainColor: {
-      value: '',
-      selecttor: '',
+      value: '#5c5c5c',
+      selector: null,
     },
     textColor: {
-      value: '',
-      selecttor: '',
+      value: '#ffffff',
+      selector: null,
     },
     jumbotronBackgroundColor: {
-      value: '',
-      selecttor: '',
+      value: '#5c5c5c',
+      selector: 'header .jumbotron',
     },
     jumbotronTextColor: {
-      value: '',
-      selecttor: '',
+      value: '#ffffff',
+      selector: 'header .jumbotron',
     },
   })
 
@@ -40,11 +40,27 @@ export const useEditorStore = defineStore('editor', () => {
 
   function defaultStyles() {
     return {
-      mainColor: '#5c5c5c',
-      textColor: '#ffffff',
-      jumbotronBackgroundColor: '',
-      jumbotronTextColor: '',
+      mainColor: {
+        value: '#5c5c5c',
+        selector: null,
+      },
+      textColor: {
+        value: '#ffffff',
+        selector: null,
+      },
+      jumbotronBackgroundColor: {
+        value: '#5c5c5c',
+        selector: 'header .jumbotron',
+      },
+      jumbotronTextColor: {
+        value: '#ffffff',
+        selector: 'header .jumbotron',
+      },
     }
+  }
+
+  function resetStyles() {
+    customStyles.value = defaultStyles()
   }
 
   return {
@@ -54,5 +70,6 @@ export const useEditorStore = defineStore('editor', () => {
     setCustomStyles,
     saveStateToLocalStorage,
     fetchFromLocalStorage,
+    resetStyles,
   }
 })
