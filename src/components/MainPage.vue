@@ -1,7 +1,14 @@
 <script setup>
+import { applyStylesFromStore } from '@/helpers'
 import { useEditorStore } from '@/stores/editor'
 
 const editor = useEditorStore()
+
+function resetPage() {
+  editor.resetStyles()
+
+  applyStylesFromStore(editor)
+}
 </script>
 <template>
   <main>
@@ -11,7 +18,7 @@ const editor = useEditorStore()
         <ul>
           <li @click="editor.toggleShowEditor()">Customise</li>
           <li @click="editor.saveStateToLocalStorage()">Save Styles</li>
-          <li>Reset Styles</li>
+          <li @click="resetPage">Reset Styles</li>
         </ul>
       </nav>
     </header>
